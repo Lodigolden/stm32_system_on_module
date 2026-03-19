@@ -1,1 +1,2 @@
-# stm32_system_on_module
+# STM32H7 System-on-Module
+This STM32H7 system-on-module is everything needed to get the MCU up and running. Simply place a footprint for the board-to-board connectors on your motherboard, and use whatever pins your project needs!
