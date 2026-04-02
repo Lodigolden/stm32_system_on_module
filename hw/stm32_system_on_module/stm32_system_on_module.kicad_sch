@@ -2,9 +2,222 @@
 	(version 20250114)
 	(generator "eeschema")
 	(generator_version "9.0")
-	(uuid 54969b42-2e45-4c31-8d23-939dadedf4cb)
+	(uuid "54969b42-2e45-4c31-8d23-939dadedf4cb")
 	(paper "A4")
+	(title_block
+		(title "System-On-Module")
+	)
 	(lib_symbols)
+	(sheet
+		(at 192.024 37.338)
+		(size 31.75 29.464)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 255 255 194 1.0000)
+		)
+		(uuid "18bae181-d213-4727-b99c-2c962ee0d796")
+		(property "Sheetname" "Board-to-Board"
+			(at 192.024 36.6264 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "board_to_board.kicad_sch"
+			(at 192.024 67.3866 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "stm32_system_on_module"
+				(path "/54969b42-2e45-4c31-8d23-939dadedf4cb"
+					(page "5")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 192.024 103.124)
+		(size 29.718 28.448)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 255 255 194 1.0000)
+		)
+		(uuid "8c5823b7-2025-467e-95c1-c90f00bfb181")
+		(property "Sheetname" "Flash"
+			(at 192.024 102.4124 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "flash.kicad_sch"
+			(at 192.024 132.1566 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "stm32_system_on_module"
+				(path "/54969b42-2e45-4c31-8d23-939dadedf4cb"
+					(page "4")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 67.564 73.406)
+		(size 31.75 27.178)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 255 255 194 1.0000)
+		)
+		(uuid "b4724a1b-d36f-4ddb-922e-578f92adbc8d")
+		(property "Sheetname" "Input"
+			(at 67.564 72.6944 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "input.kicad_sch"
+			(at 67.564 101.1686 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "stm32_system_on_module"
+				(path "/54969b42-2e45-4c31-8d23-939dadedf4cb"
+					(page "6")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 113.792 61.468)
+		(size 61.722 50.8)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 255 255 194 1.0000)
+		)
+		(uuid "b5bf068c-e82f-4aa0-8f68-8e1806f0b040")
+		(property "Sheetname" "MCU"
+			(at 113.792 60.7564 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "mcu.kicad_sch"
+			(at 113.792 112.8526 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "stm32_system_on_module"
+				(path "/54969b42-2e45-4c31-8d23-939dadedf4cb"
+					(page "2")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 128.27 126.746)
+		(size 33.02 28.956)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 255 255 194 1.0000)
+		)
+		(uuid "d115373d-90ce-45a5-a2ce-d182ffd56488")
+		(property "Sheetname" "SDRAM"
+			(at 128.27 126.0344 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "sdram.kicad_sch"
+			(at 128.27 156.2866 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "stm32_system_on_module"
+				(path "/54969b42-2e45-4c31-8d23-939dadedf4cb"
+					(page "3")
+				)
+			)
+		)
+	)
 	(sheet_instances
 		(path "/"
 			(page "1")
