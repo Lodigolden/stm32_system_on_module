@@ -233,3 +233,22 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64 C:\Users\adamh\stm32_s
 
 !ENTRY org.eclipse.cdt.core 1 0 2026-03-29 14:48:41.380
 !MESSAGE Indexed 'som_pinout' (24 sources, 183 headers) in 6.99 sec: 20,129 declarations; 88,501 references; 3 unresolved inclusions; 46 syntax errors; 884 unresolved names (0.81%)
+!SESSION 2026-04-07 17:36:58.157 -----------------------------------------------
+eclipse.buildId=Version 1.16.0
+java.version=17.0.11
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  C:\Users\adamh\stm32_system_on_module\hw\pinout\som_pinout\.project
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 C:\Users\adamh\stm32_system_on_module\hw\pinout\som_pinout\.project
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2026-04-07 17:37:06.620
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2026-04-07 17:37:06.622
+!MESSAGE Log4j2 initialized with config file C:\Users\adamh\stm32_system_on_module\hw\pinout\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2026-04-07 17:37:15.814
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-04-07 17:37:21.799
+!MESSAGE Indexed 'som_pinout' (24 sources, 183 headers) in 5.77 sec: 20,129 declarations; 88,501 references; 3 unresolved inclusions; 46 syntax errors; 884 unresolved names (0.81%)

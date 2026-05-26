@@ -1,1 +1,6 @@
-2026-04-02 08:55:59,304 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
+2026-04-17 19:17:42,716 [INFO] WebApp:189 - Connection lost
+2026-04-17 19:17:53,200 [INFO] WebApp:186 - Connection restablished
+2026-04-17 19:17:56,111 [INFO] WebApp:189 - Connection lost
+2026-04-17 19:17:56,785 [INFO] WebApp:186 - Connection restablished
+2026-04-17 19:17:59,411 [INFO] WebApp:189 - Connection lost
+2026-04-17 19:18:09,480 [INFO] WebApp:388 - JxBrowser engine has been closed 
