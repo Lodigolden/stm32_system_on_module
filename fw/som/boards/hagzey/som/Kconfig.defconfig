@@ -1,0 +1,6 @@
+if BOARD_SOM
+
+config BOARD
+    default "som"
+
+endif # BOARD_SOM

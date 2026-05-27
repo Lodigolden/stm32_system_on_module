@@ -1,0 +1,24 @@
+# Available runners configured by board.cmake.
+runners:
+- stm32flash
+
+# Default flash runner if --runner is not given.
+flash-runner: stm32flash
+
+# Common runner configuration values.
+config:
+  board_dir: /home/adamhage/Projects/stm32_system_on_module/fw/som/boards/hagzey/som
+  # Build outputs:
+  elf_file: zephyr.elf
+  hex_file: zephyr.hex
+  bin_file: zephyr.bin
+  # Host tools:
+  gdb: /home/adamhage/zephyr-sdk-1.0.1/gnu/arm-zephyr-eabi/bin/arm-zephyr-eabi-gdb-py
+  openocd: /home/adamhage/zephyr-sdk-1.0.1/hosttools/sysroots/x86_64-pokysdk-linux/usr/bin/openocd
+  openocd_search:
+    - /home/adamhage/zephyr-sdk-1.0.1/hosttools/sysroots/x86_64-pokysdk-linux/usr/share/openocd/scripts
+
+# Runner specific arguments
+args:
+  stm32flash:
+    - --start-addr=0x08000000

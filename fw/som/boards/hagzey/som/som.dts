@@ -1,0 +1,43 @@
+/dts-v1/;
+#include <st/h7/stm32h743Xi.dtsi>
+#include <st/h7/stm32h743vitx-pinctrl.dtsi>
+#include <zephyr/dt-bindings/input/input-event-codes.h>
+#include <zephyr/dt-bindings/mipi_dbi/mipi_dbi.h>
+
+/ {
+    model = "Hagzey STM32H743 Board";
+    
+    chosen {
+        zephyr,sram = &sram0;
+        zephyr,flash = &flash0;
+        zephyr,console = &usart1;
+        zephyr,shell-uart = &usart1;
+    };
+};
+
+/* UART1 : Console and programming */
+&usart1 {
+    pinctrl-0 = <&usart1_tx_pb14 &usart1_rx_pb15>;
+    pinctrl-names = "default";
+    current-speed = <57600>;
+    status = "okay";
+};
+
+/* Clocks */
+&rcc {
+	clocks = <&clk_hsi>;
+	clock-frequency = <DT_FREQ_M(64)>;
+
+    d1cpre = <1>;
+    hpre = <1>;
+
+    d1ppre = <1>;
+    d2ppre1 = <1>;
+    d2ppre2 = <1>;
+    d3ppre = <1>;
+};
+
+/* Power */
+&pwr {
+    power-supply = "ldo";
+};

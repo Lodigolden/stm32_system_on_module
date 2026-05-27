@@ -1,0 +1,3 @@
+config BOARD_SOM
+    bool
+    select SOC_STM32H743XX
