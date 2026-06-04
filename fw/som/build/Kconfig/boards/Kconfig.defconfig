@@ -1,2 +1,0 @@
-# Load Zephyr board defconfig descriptions.
-osource "/home/adamhage/Projects/stm32_system_on_module/fw/som/boards/hagzey/som/Kconfig.defconfig"

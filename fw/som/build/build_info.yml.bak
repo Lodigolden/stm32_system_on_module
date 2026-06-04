@@ -1,4 +1,0 @@
-west:
-  command: /home/adamhage/zephyrproject/.venv/bin/west build -p always -b som
-  topdir: /home/adamhage/zephyrproject
-  version: 1.5.0

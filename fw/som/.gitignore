@@ -1,6 +1,2 @@
-zephyr/**
-tools/**
-modules/**
-build/**
-bootloader/**
-.west/**
+# Ignore build artifacts.
+build/
