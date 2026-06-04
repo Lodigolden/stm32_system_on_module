@@ -1,0 +1,121 @@
+/dts-v1/;
+#include <st/h7/stm32h743Xi.dtsi>
+#include <st/h7/stm32h743vitx-pinctrl.dtsi>
+#include <zephyr/dt-bindings/input/input-event-codes.h>
+#include <zephyr/dt-bindings/mipi_dbi/mipi_dbi.h>
+
+/ {
+    model = "Hagzey STM32H743 Board";
+    
+    chosen {
+        zephyr,sram = &sram0;
+        zephyr,flash = &flash0;
+        zephyr,console = &usart1;
+        zephyr,shell-uart = &usart1;
+    };
+};
+
+/* Custom pin definitions */
+&pinctrl {
+    quadspi_clk_pf10: quadspi_clk_pf10 {
+        pinmux = <STM32_PINMUX('F', 10, AF9)>;
+        slew-rate = "very-high-speed";
+    };
+
+    quadspi_bk1_ncs_pb10: quadspi_bk1_ncs_pb10 {
+        pinmux = <STM32_PINMUX('B', 10, AF9)>;
+        slew-rate = "very-high-speed";
+    };
+
+    quadspi_bk1_io0_pf8: quadspi_bk1_io0_pf8 {
+        pinmux = <STM32_PINMUX('F', 8, AF10)>;
+        slew-rate = "very-high-speed";
+    };
+
+    quadspi_bk1_io1_pf9: quadspi_bk1_io1_pf9 {
+        pinmux = <STM32_PINMUX('F', 9, AF10)>;
+        slew-rate = "very-high-speed";
+    };
+
+    quadspi_bk1_io2_pe2: quadspi_bk1_io2_pe2 {
+        pinmux = <STM32_PINMUX('E', 2, AF9)>;
+        slew-rate = "very-high-speed";
+    };
+
+    quadspi_bk1_io3_pf6: quadspi_bk1_io3_pf6 {
+        pinmux = <STM32_PINMUX('F', 6, AF9)>;
+        slew-rate = "very-high-speed";
+    };
+};
+
+/* UART1 : Console and programming */
+&usart1 {
+    pinctrl-0 = <&usart1_tx_pb14 &usart1_rx_pb15>;
+    pinctrl-names = "default";
+    current-speed = <57600>;
+    status = "okay";
+};
+
+/* Clocks */
+&clk_hse {
+    hse-bypass;
+    clock-frequency = <DT_FREQ_M(8)>; /* 8MHz clock */
+    status = "okay";
+};
+
+&pll {
+    div-m = <2>;
+    mul-n = <240>;
+    div-p = <2>;
+    div-q = <2>;
+    div-r = <2>;
+    clocks = <&clk_hse>;
+    status = "okay";
+};
+
+&rcc {
+    clocks = <&pll>;
+    clock-frequency = <DT_FREQ_M(480)>;
+    d1cpre = <1>;
+    hpre = <2>;
+    d1ppre = <2>;
+    d2ppre1 = <2>;
+    d2ppre2 = <2>;
+    d3ppre = <2>;
+};
+
+/* Power */
+&pwr {
+    power-supply = "ldo";
+};
+
+/* QSPI NOR Flash */
+&quadspi {
+    pinctrl-names = "default";
+    pinctrl-0 = <&quadspi_clk_pf10 &quadspi_bk1_ncs_pb10
+                 &quadspi_bk1_io0_pf8 &quadspi_bk1_io1_pf9
+                 &quadspi_bk1_io2_pe2 &quadspi_bk1_io3_pf6>;
+    flash-id = <1>;
+    status = "okay";
+
+    at25ff161a: qspi-nor-flash@0 {
+        compatible = "st,stm32-qspi-nor";
+        reg = <0>;
+        size = <DT_SIZE_M(2)>; /* 2 MByte */
+        qspi-max-frequency = <40000000>;
+        cs-high-time = <2>; /* >= 50ns */
+        spi-bus-width = <4>;
+        writeoc = "PP_1_1_4";
+        status = "okay";
+
+        partitions {
+            compatible = "fixed-partitions";
+            #address-cells = <1>;
+            #size-cells = <1>;
+
+            slot0_partition: partition@0 {
+                reg = <0x00000000 DT_SIZE_M(2)>;
+            };
+        };
+    };
+};

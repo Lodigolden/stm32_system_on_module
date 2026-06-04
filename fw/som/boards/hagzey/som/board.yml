@@ -1,0 +1,6 @@
+board:
+  name: som
+  full_name: Hagzey STM32 System on Module
+  vendor: hagzey
+  socs:
+    - name: stm32h743xx
