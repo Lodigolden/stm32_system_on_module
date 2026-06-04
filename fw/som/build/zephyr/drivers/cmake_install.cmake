@@ -79,6 +79,11 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
+  include("/home/adamhage/Projects/stm32_system_on_module/fw/som/build/zephyr/drivers/flash/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
   include("/home/adamhage/Projects/stm32_system_on_module/fw/som/build/zephyr/drivers/gpio/cmake_install.cmake")
 endif()
 

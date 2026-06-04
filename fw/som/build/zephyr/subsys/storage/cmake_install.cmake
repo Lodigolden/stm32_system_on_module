@@ -37,3 +37,8 @@ if(NOT DEFINED CMAKE_OBJDUMP)
   set(CMAKE_OBJDUMP "/home/adamhage/zephyr-sdk-1.0.1/gnu/arm-zephyr-eabi/bin/arm-zephyr-eabi-objdump")
 endif()
 
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/home/adamhage/Projects/stm32_system_on_module/fw/som/build/zephyr/subsys/storage/flash_map/cmake_install.cmake")
+endif()
+

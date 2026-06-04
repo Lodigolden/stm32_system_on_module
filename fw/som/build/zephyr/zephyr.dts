@@ -73,7 +73,7 @@
 						reg = < 0x820 0x2 >;         /* in zephyr/dts/arm/st/h7/stm32h7.dtsi:184 */
 						#nvmem-cell-cells = < 0x0 >; /* in zephyr/dts/arm/st/h7/stm32h7.dtsi:185 */
 						read-only;                   /* in zephyr/dts/arm/st/h7/stm32h7.dtsi:186 */
-						phandle = < 0xb >;           /* in zephyr/dts/arm/st/h7/stm32h7.dtsi:1297 */
+						phandle = < 0x12 >;          /* in zephyr/dts/arm/st/h7/stm32h7.dtsi:1297 */
 					};
 
 					/* node '/soc/flash-controller@52002000/flash@1ff1e000/nvmem-layout/ts-cal2@840' defined in zephyr/dts/arm/st/h7/stm32h7.dtsi:189 */
@@ -81,7 +81,7 @@
 						reg = < 0x840 0x2 >;         /* in zephyr/dts/arm/st/h7/stm32h7.dtsi:190 */
 						#nvmem-cell-cells = < 0x0 >; /* in zephyr/dts/arm/st/h7/stm32h7.dtsi:191 */
 						read-only;                   /* in zephyr/dts/arm/st/h7/stm32h7.dtsi:192 */
-						phandle = < 0xc >;           /* in zephyr/dts/arm/st/h7/stm32h7.dtsi:1297 */
+						phandle = < 0x13 >;          /* in zephyr/dts/arm/st/h7/stm32h7.dtsi:1297 */
 					};
 
 					/* node '/soc/flash-controller@52002000/flash@1ff1e000/nvmem-layout/vrefint@860' defined in zephyr/dts/arm/st/h7/stm32h7.dtsi:195 */
@@ -89,7 +89,7 @@
 						reg = < 0x860 0x2 >;         /* in zephyr/dts/arm/st/h7/stm32h7.dtsi:196 */
 						#nvmem-cell-cells = < 0x0 >; /* in zephyr/dts/arm/st/h7/stm32h7.dtsi:197 */
 						read-only;                   /* in zephyr/dts/arm/st/h7/stm32h7.dtsi:198 */
-						phandle = < 0xe >;           /* in zephyr/dts/arm/st/h7/stm32h7.dtsi:1315 */
+						phandle = < 0x15 >;          /* in zephyr/dts/arm/st/h7/stm32h7.dtsi:1315 */
 					};
 				};
 			};
@@ -107,18 +107,18 @@
 
 		/* node '/soc/rcc@58024400' defined in zephyr/dts/arm/st/h7/stm32h7.dtsi:204 */
 		rcc: rcc@58024400 {
-			compatible = "st,stm32h7-rcc";   /* in zephyr/dts/arm/st/h7/stm32h7.dtsi:205 */
-			#clock-cells = < 0x2 >;          /* in zephyr/dts/arm/st/h7/stm32h7.dtsi:206 */
-			reg = < 0x58024400 0x400 >;      /* in zephyr/dts/arm/st/h7/stm32h7.dtsi:207 */
-			clocks = < &clk_hsi >;           /* in ../Projects/stm32_system_on_module/fw/som/boards/hagzey/som/som.dts:28 */
-			clock-frequency = < 0x3d09000 >; /* in ../Projects/stm32_system_on_module/fw/som/boards/hagzey/som/som.dts:29 */
-			d1cpre = < 0x1 >;                /* in ../Projects/stm32_system_on_module/fw/som/boards/hagzey/som/som.dts:31 */
-			hpre = < 0x1 >;                  /* in ../Projects/stm32_system_on_module/fw/som/boards/hagzey/som/som.dts:32 */
-			d1ppre = < 0x1 >;                /* in ../Projects/stm32_system_on_module/fw/som/boards/hagzey/som/som.dts:34 */
-			d2ppre1 = < 0x1 >;               /* in ../Projects/stm32_system_on_module/fw/som/boards/hagzey/som/som.dts:35 */
-			d2ppre2 = < 0x1 >;               /* in ../Projects/stm32_system_on_module/fw/som/boards/hagzey/som/som.dts:36 */
-			d3ppre = < 0x1 >;                /* in ../Projects/stm32_system_on_module/fw/som/boards/hagzey/som/som.dts:37 */
-			phandle = < 0x3 >;               /* in zephyr/dts/arm/st/h7/stm32h7.dtsi:230 */
+			compatible = "st,stm32h7-rcc";    /* in zephyr/dts/arm/st/h7/stm32h7.dtsi:205 */
+			#clock-cells = < 0x2 >;           /* in zephyr/dts/arm/st/h7/stm32h7.dtsi:206 */
+			reg = < 0x58024400 0x400 >;       /* in zephyr/dts/arm/st/h7/stm32h7.dtsi:207 */
+			clocks = < &pll >;                /* in ../Projects/stm32_system_on_module/fw/som/boards/hagzey/som/som.dts:77 */
+			clock-frequency = < 0x1c9c3800 >; /* in ../Projects/stm32_system_on_module/fw/som/boards/hagzey/som/som.dts:78 */
+			d1cpre = < 0x1 >;                 /* in ../Projects/stm32_system_on_module/fw/som/boards/hagzey/som/som.dts:79 */
+			hpre = < 0x2 >;                   /* in ../Projects/stm32_system_on_module/fw/som/boards/hagzey/som/som.dts:80 */
+			d1ppre = < 0x2 >;                 /* in ../Projects/stm32_system_on_module/fw/som/boards/hagzey/som/som.dts:81 */
+			d2ppre1 = < 0x2 >;                /* in ../Projects/stm32_system_on_module/fw/som/boards/hagzey/som/som.dts:82 */
+			d2ppre2 = < 0x2 >;                /* in ../Projects/stm32_system_on_module/fw/som/boards/hagzey/som/som.dts:83 */
+			d3ppre = < 0x2 >;                 /* in ../Projects/stm32_system_on_module/fw/som/boards/hagzey/som/som.dts:84 */
+			phandle = < 0x3 >;                /* in zephyr/dts/arm/st/h7/stm32h7.dtsi:230 */
 
 			/* node '/soc/rcc@58024400/reset-controller' defined in zephyr/dts/arm/st/h7/stm32h7.dtsi:209 */
 			rctl: reset-controller {
@@ -132,7 +132,7 @@
 		pwr: power@58024800 {
 			compatible = "st,stm32h7-pwr"; /* in zephyr/dts/arm/st/h7/stm32h7.dtsi:220 */
 			reg = < 0x58024800 0x400 >;    /* in zephyr/dts/arm/st/h7/stm32h7.dtsi:221 */
-			power-supply = "ldo";          /* in ../Projects/stm32_system_on_module/fw/som/boards/hagzey/som/som.dts:42 */
+			power-supply = "ldo";          /* in ../Projects/stm32_system_on_module/fw/som/boards/hagzey/som/som.dts:89 */
 		};
 
 		/* node '/soc/interrupt-controller@58000000' defined in zephyr/dts/arm/st/h7/stm32h7.dtsi:224 */
@@ -273,17 +273,59 @@
 				clocks = < &rcc 0xe0 0x400 >; /* in zephyr/dts/arm/st/h7/stm32h7.dtsi:331 */
 			};
 
+			/* node '/soc/pin-controller@58020000/quadspi_bk1_ncs_pb10' defined in modules/hal/stm32/dts/st/h7/stm32h743vitx-pinctrl.dtsi:1854 */
+			quadspi_bk1_ncs_pb10: quadspi_bk1_ncs_pb10 {
+				pinmux = < 0x349 >;            /* in ../Projects/stm32_system_on_module/fw/som/boards/hagzey/som/som.dts:26 */
+				slew-rate = "very-high-speed"; /* in ../Projects/stm32_system_on_module/fw/som/boards/hagzey/som/som.dts:27 */
+				phandle = < 0xa >;             /* in ../Projects/stm32_system_on_module/fw/som/boards/hagzey/som/som.dts:95 */
+			};
+
+			/* node '/soc/pin-controller@58020000/quadspi_bk1_io2_pe2' defined in modules/hal/stm32/dts/st/h7/stm32h743vitx-pinctrl.dtsi:1889 */
+			quadspi_bk1_io2_pe2: quadspi_bk1_io2_pe2 {
+				pinmux = < 0x849 >;            /* in ../Projects/stm32_system_on_module/fw/som/boards/hagzey/som/som.dts:41 */
+				slew-rate = "very-high-speed"; /* in ../Projects/stm32_system_on_module/fw/som/boards/hagzey/som/som.dts:42 */
+				phandle = < 0xd >;             /* in ../Projects/stm32_system_on_module/fw/som/boards/hagzey/som/som.dts:95 */
+			};
+
 			/* node '/soc/pin-controller@58020000/usart1_rx_pb15' defined in modules/hal/stm32/dts/st/h7/stm32h743vitx-pinctrl.dtsi:3125 */
 			usart1_rx_pb15: usart1_rx_pb15 {
 				pinmux = < 0x3e4 >; /* in modules/hal/stm32/dts/st/h7/stm32h743vitx-pinctrl.dtsi:3126 */
-				phandle = < 0x6 >;  /* in ../Projects/stm32_system_on_module/fw/som/boards/hagzey/som/som.dts:20 */
+				phandle = < 0x6 >;  /* in ../Projects/stm32_system_on_module/fw/som/boards/hagzey/som/som.dts:53 */
 			};
 
 			/* node '/soc/pin-controller@58020000/usart1_tx_pb14' defined in modules/hal/stm32/dts/st/h7/stm32h743vitx-pinctrl.dtsi:3223 */
 			usart1_tx_pb14: usart1_tx_pb14 {
 				pinmux = < 0x3c4 >; /* in modules/hal/stm32/dts/st/h7/stm32h743vitx-pinctrl.dtsi:3224 */
 				bias-pull-up;       /* in modules/hal/stm32/dts/st/h7/stm32h743vitx-pinctrl.dtsi:3225 */
-				phandle = < 0x5 >;  /* in ../Projects/stm32_system_on_module/fw/som/boards/hagzey/som/som.dts:20 */
+				phandle = < 0x5 >;  /* in ../Projects/stm32_system_on_module/fw/som/boards/hagzey/som/som.dts:53 */
+			};
+
+			/* node '/soc/pin-controller@58020000/quadspi_clk_pf10' defined in ../Projects/stm32_system_on_module/fw/som/boards/hagzey/som/som.dts:20 */
+			quadspi_clk_pf10: quadspi_clk_pf10 {
+				pinmux = < 0xb49 >;            /* in ../Projects/stm32_system_on_module/fw/som/boards/hagzey/som/som.dts:21 */
+				slew-rate = "very-high-speed"; /* in ../Projects/stm32_system_on_module/fw/som/boards/hagzey/som/som.dts:22 */
+				phandle = < 0x9 >;             /* in ../Projects/stm32_system_on_module/fw/som/boards/hagzey/som/som.dts:95 */
+			};
+
+			/* node '/soc/pin-controller@58020000/quadspi_bk1_io0_pf8' defined in ../Projects/stm32_system_on_module/fw/som/boards/hagzey/som/som.dts:30 */
+			quadspi_bk1_io0_pf8: quadspi_bk1_io0_pf8 {
+				pinmux = < 0xb0a >;            /* in ../Projects/stm32_system_on_module/fw/som/boards/hagzey/som/som.dts:31 */
+				slew-rate = "very-high-speed"; /* in ../Projects/stm32_system_on_module/fw/som/boards/hagzey/som/som.dts:32 */
+				phandle = < 0xb >;             /* in ../Projects/stm32_system_on_module/fw/som/boards/hagzey/som/som.dts:95 */
+			};
+
+			/* node '/soc/pin-controller@58020000/quadspi_bk1_io1_pf9' defined in ../Projects/stm32_system_on_module/fw/som/boards/hagzey/som/som.dts:35 */
+			quadspi_bk1_io1_pf9: quadspi_bk1_io1_pf9 {
+				pinmux = < 0xb2a >;            /* in ../Projects/stm32_system_on_module/fw/som/boards/hagzey/som/som.dts:36 */
+				slew-rate = "very-high-speed"; /* in ../Projects/stm32_system_on_module/fw/som/boards/hagzey/som/som.dts:37 */
+				phandle = < 0xc >;             /* in ../Projects/stm32_system_on_module/fw/som/boards/hagzey/som/som.dts:95 */
+			};
+
+			/* node '/soc/pin-controller@58020000/quadspi_bk1_io3_pf6' defined in ../Projects/stm32_system_on_module/fw/som/boards/hagzey/som/som.dts:45 */
+			quadspi_bk1_io3_pf6: quadspi_bk1_io3_pf6 {
+				pinmux = < 0xac9 >;            /* in ../Projects/stm32_system_on_module/fw/som/boards/hagzey/som/som.dts:46 */
+				slew-rate = "very-high-speed"; /* in ../Projects/stm32_system_on_module/fw/som/boards/hagzey/som/som.dts:47 */
+				phandle = < 0xe >;             /* in ../Projects/stm32_system_on_module/fw/som/boards/hagzey/som/som.dts:95 */
 			};
 		};
 
@@ -311,10 +353,10 @@
 			clocks = < &rcc 0xf0 0x10 >;                     /* in zephyr/dts/arm/st/h7/stm32h7.dtsi:352 */
 			resets = < &rctl 0x1304 >;                       /* in zephyr/dts/arm/st/h7/stm32h7.dtsi:353 */
 			interrupts = < 0x25 0x0 >;                       /* in zephyr/dts/arm/st/h7/stm32h7.dtsi:354 */
-			pinctrl-0 = < &usart1_tx_pb14 &usart1_rx_pb15 >; /* in ../Projects/stm32_system_on_module/fw/som/boards/hagzey/som/som.dts:20 */
-			pinctrl-names = "default";                       /* in ../Projects/stm32_system_on_module/fw/som/boards/hagzey/som/som.dts:21 */
-			current-speed = < 0xe100 >;                      /* in ../Projects/stm32_system_on_module/fw/som/boards/hagzey/som/som.dts:22 */
-			status = "okay";                                 /* in ../Projects/stm32_system_on_module/fw/som/boards/hagzey/som/som.dts:23 */
+			pinctrl-0 = < &usart1_tx_pb14 &usart1_rx_pb15 >; /* in ../Projects/stm32_system_on_module/fw/som/boards/hagzey/som/som.dts:53 */
+			pinctrl-names = "default";                       /* in ../Projects/stm32_system_on_module/fw/som/boards/hagzey/som/som.dts:54 */
+			current-speed = < 0xe100 >;                      /* in ../Projects/stm32_system_on_module/fw/som/boards/hagzey/som/som.dts:55 */
+			status = "okay";                                 /* in ../Projects/stm32_system_on_module/fw/som/boards/hagzey/som/som.dts:56 */
 		};
 
 		/* node '/soc/serial@40004400' defined in zephyr/dts/arm/st/h7/stm32h7.dtsi:358 */
@@ -433,7 +475,7 @@
 			interrupt-names = "event",
 			                  "error";       /* in zephyr/dts/arm/st/h7/stm32h7.dtsi:449 */
 			status = "disabled";             /* in zephyr/dts/arm/st/h7/stm32h7.dtsi:450 */
-			phandle = < 0xf >;               /* in zephyr/dts/arm/st/h7/stm32h7.dtsi:1325 */
+			phandle = < 0x16 >;              /* in zephyr/dts/arm/st/h7/stm32h7.dtsi:1325 */
 		};
 
 		/* node '/soc/i2c@40005800' defined in zephyr/dts/arm/st/h7/stm32h7.dtsi:453 */
@@ -449,7 +491,7 @@
 			interrupt-names = "event",
 			                  "error";       /* in zephyr/dts/arm/st/h7/stm32h7.dtsi:461 */
 			status = "disabled";             /* in zephyr/dts/arm/st/h7/stm32h7.dtsi:462 */
-			phandle = < 0x10 >;              /* in zephyr/dts/arm/st/h7/stm32h7.dtsi:1333 */
+			phandle = < 0x17 >;              /* in zephyr/dts/arm/st/h7/stm32h7.dtsi:1333 */
 		};
 
 		/* node '/soc/i2c@40005c00' defined in zephyr/dts/arm/st/h7/stm32h7.dtsi:465 */
@@ -465,7 +507,7 @@
 			interrupt-names = "event",
 			                  "error";       /* in zephyr/dts/arm/st/h7/stm32h7.dtsi:473 */
 			status = "disabled";             /* in zephyr/dts/arm/st/h7/stm32h7.dtsi:474 */
-			phandle = < 0x11 >;              /* in zephyr/dts/arm/st/h7/stm32h7.dtsi:1341 */
+			phandle = < 0x18 >;              /* in zephyr/dts/arm/st/h7/stm32h7.dtsi:1341 */
 		};
 
 		/* node '/soc/i2c@58001c00' defined in zephyr/dts/arm/st/h7/stm32h7.dtsi:477 */
@@ -481,7 +523,7 @@
 			interrupt-names = "event",
 			                  "error";      /* in zephyr/dts/arm/st/h7/stm32h7.dtsi:485 */
 			status = "disabled";            /* in zephyr/dts/arm/st/h7/stm32h7.dtsi:486 */
-			phandle = < 0x12 >;             /* in zephyr/dts/arm/st/h7/stm32h7.dtsi:1349 */
+			phandle = < 0x19 >;             /* in zephyr/dts/arm/st/h7/stm32h7.dtsi:1349 */
 		};
 
 		/* node '/soc/spi@40013000' defined in zephyr/dts/arm/st/h7/stm32h7.dtsi:489 */
@@ -1165,7 +1207,7 @@
 			st,adc-has-differential-support;                             /* in zephyr/dts/arm/st/h7/stm32h7.dtsi:1064 */
 			st,adc-has-injected-support;                                 /* in zephyr/dts/arm/st/h7/stm32h7.dtsi:1065 */
 			status = "disabled";                                         /* in zephyr/dts/arm/st/h7/stm32h7.dtsi:1066 */
-			phandle = < 0xd >;                                           /* in zephyr/dts/arm/st/h7/stm32h7.dtsi:1303 */
+			phandle = < 0x14 >;                                          /* in zephyr/dts/arm/st/h7/stm32h7.dtsi:1303 */
 		};
 
 		/* node '/soc/dac@40007400' defined in zephyr/dts/arm/st/h7/stm32h7.dtsi:1069 */
@@ -1195,7 +1237,7 @@
 			dma-offset = < 0x0 >;           /* in zephyr/dts/arm/st/h7/stm32h7.dtsi:1085 */
 			dma-requests = < 0x8 >;         /* in zephyr/dts/arm/st/h7/stm32h7.dtsi:1086 */
 			status = "disabled";            /* in zephyr/dts/arm/st/h7/stm32h7.dtsi:1087 */
-			phandle = < 0x9 >;              /* in zephyr/dts/arm/st/h7/stm32h7.dtsi:1237 */
+			phandle = < 0xf >;              /* in zephyr/dts/arm/st/h7/stm32h7.dtsi:1237 */
 		};
 
 		/* node '/soc/dma@40020400' defined in zephyr/dts/arm/st/h7/stm32h7.dtsi:1090 */
@@ -1353,14 +1395,42 @@
 
 		/* node '/soc/spi@52005000' defined in zephyr/dts/arm/st/h7/stm32h7.dtsi:1221 */
 		quadspi: spi@52005000 {
-			compatible = "st,stm32-qspi";    /* in zephyr/dts/arm/st/h7/stm32h7.dtsi:1222 */
-			#address-cells = < 0x1 >;        /* in zephyr/dts/arm/st/h7/stm32h7.dtsi:1223 */
-			#size-cells = < 0x0 >;           /* in zephyr/dts/arm/st/h7/stm32h7.dtsi:1224 */
+			compatible = "st,stm32-qspi";                                                                   /* in zephyr/dts/arm/st/h7/stm32h7.dtsi:1222 */
+			#address-cells = < 0x1 >;                                                                       /* in zephyr/dts/arm/st/h7/stm32h7.dtsi:1223 */
+			#size-cells = < 0x0 >;                                                                          /* in zephyr/dts/arm/st/h7/stm32h7.dtsi:1224 */
 			reg = < 0x52005000 0x1000 >,
-			      < 0x90000000 0x10000000 >; /* in zephyr/dts/arm/st/h7/stm32h7.dtsi:1225 */
-			interrupts = < 0x5c 0x0 >;       /* in zephyr/dts/arm/st/h7/stm32h7.dtsi:1226 */
-			clocks = < &rcc 0xd4 0x4000 >;   /* in zephyr/dts/arm/st/h7/stm32h7.dtsi:1227 */
-			status = "disabled";             /* in zephyr/dts/arm/st/h7/stm32h7.dtsi:1228 */
+			      < 0x90000000 0x10000000 >;                                                                /* in zephyr/dts/arm/st/h7/stm32h7.dtsi:1225 */
+			interrupts = < 0x5c 0x0 >;                                                                      /* in zephyr/dts/arm/st/h7/stm32h7.dtsi:1226 */
+			clocks = < &rcc 0xd4 0x4000 >;                                                                  /* in zephyr/dts/arm/st/h7/stm32h7.dtsi:1227 */
+			pinctrl-names = "default";                                                                      /* in ../Projects/stm32_system_on_module/fw/som/boards/hagzey/som/som.dts:94 */
+			pinctrl-0 = < &quadspi_clk_pf10 &quadspi_bk1_ncs_pb10 &quadspi_bk1_io0_pf8 &quadspi_bk1_io1_pf9
+			              &quadspi_bk1_io2_pe2 &quadspi_bk1_io3_pf6 >;                                      /* in ../Projects/stm32_system_on_module/fw/som/boards/hagzey/som/som.dts:95 */
+			flash-id = < 0x1 >;                                                                             /* in ../Projects/stm32_system_on_module/fw/som/boards/hagzey/som/som.dts:98 */
+			status = "okay";                                                                                /* in ../Projects/stm32_system_on_module/fw/som/boards/hagzey/som/som.dts:99 */
+
+			/* node '/soc/spi@52005000/qspi-nor-flash@0' defined in ../Projects/stm32_system_on_module/fw/som/boards/hagzey/som/som.dts:101 */
+			at25ff161a: qspi-nor-flash@0 {
+				compatible = "st,stm32-qspi-nor";   /* in ../Projects/stm32_system_on_module/fw/som/boards/hagzey/som/som.dts:102 */
+				reg = < 0x0 >;                      /* in ../Projects/stm32_system_on_module/fw/som/boards/hagzey/som/som.dts:103 */
+				size = < 0x200000 >;                /* in ../Projects/stm32_system_on_module/fw/som/boards/hagzey/som/som.dts:104 */
+				qspi-max-frequency = < 0x2625a00 >; /* in ../Projects/stm32_system_on_module/fw/som/boards/hagzey/som/som.dts:105 */
+				cs-high-time = < 0x2 >;             /* in ../Projects/stm32_system_on_module/fw/som/boards/hagzey/som/som.dts:106 */
+				spi-bus-width = < 0x4 >;            /* in ../Projects/stm32_system_on_module/fw/som/boards/hagzey/som/som.dts:107 */
+				writeoc = "PP_1_1_4";               /* in ../Projects/stm32_system_on_module/fw/som/boards/hagzey/som/som.dts:108 */
+				status = "okay";                    /* in ../Projects/stm32_system_on_module/fw/som/boards/hagzey/som/som.dts:109 */
+
+				/* node '/soc/spi@52005000/qspi-nor-flash@0/partitions' defined in ../Projects/stm32_system_on_module/fw/som/boards/hagzey/som/som.dts:111 */
+				partitions {
+					compatible = "fixed-partitions"; /* in ../Projects/stm32_system_on_module/fw/som/boards/hagzey/som/som.dts:112 */
+					#address-cells = < 0x1 >;        /* in ../Projects/stm32_system_on_module/fw/som/boards/hagzey/som/som.dts:113 */
+					#size-cells = < 0x1 >;           /* in ../Projects/stm32_system_on_module/fw/som/boards/hagzey/som/som.dts:114 */
+
+					/* node '/soc/spi@52005000/qspi-nor-flash@0/partitions/partition@0' defined in ../Projects/stm32_system_on_module/fw/som/boards/hagzey/som/som.dts:116 */
+					slot0_partition: partition@0 {
+						reg = < 0x0 0x200000 >; /* in ../Projects/stm32_system_on_module/fw/som/boards/hagzey/som/som.dts:117 */
+					};
+				};
+			};
 		};
 
 		/* node '/soc/dcmi@48020000' defined in zephyr/dts/arm/st/h7/stm32h7.dtsi:1231 */
@@ -1516,7 +1586,10 @@
 		clk_hse: clk-hse {
 			#clock-cells = < 0x0 >;            /* in zephyr/dts/arm/st/h7/stm32h7.dtsi:76 */
 			compatible = "st,stm32-hse-clock"; /* in zephyr/dts/arm/st/h7/stm32h7.dtsi:77 */
-			status = "disabled";               /* in zephyr/dts/arm/st/h7/stm32h7.dtsi:78 */
+			hse-bypass;                        /* in ../Projects/stm32_system_on_module/fw/som/boards/hagzey/som/som.dts:61 */
+			clock-frequency = < 0x7a1200 >;    /* in ../Projects/stm32_system_on_module/fw/som/boards/hagzey/som/som.dts:62 */
+			status = "okay";                   /* in ../Projects/stm32_system_on_module/fw/som/boards/hagzey/som/som.dts:63 */
+			phandle = < 0x11 >;                /* in ../Projects/stm32_system_on_module/fw/som/boards/hagzey/som/som.dts:72 */
 		};
 
 		/* node '/clocks/clk-hsi' defined in zephyr/dts/arm/st/h7/stm32h7.dtsi:82 */
@@ -1526,7 +1599,6 @@
 			hsi-div = < 0x1 >;                   /* in zephyr/dts/arm/st/h7/stm32h7.dtsi:85 */
 			clock-frequency = < 0x3d09000 >;     /* in zephyr/dts/arm/st/h7/stm32h7.dtsi:86 */
 			status = "disabled";                 /* in zephyr/dts/arm/st/h7/stm32h7.dtsi:87 */
-			phandle = < 0x2 >;                   /* in ../Projects/stm32_system_on_module/fw/som/boards/hagzey/som/som.dts:28 */
 		};
 
 		/* node '/clocks/clk-hsi48' defined in zephyr/dts/arm/st/h7/stm32h7.dtsi:90 */
@@ -1567,7 +1639,14 @@
 			#clock-cells = < 0x0 >;              /* in zephyr/dts/arm/st/h7/stm32h7.dtsi:120 */
 			compatible = "st,stm32h7-pll-clock"; /* in zephyr/dts/arm/st/h7/stm32h7.dtsi:121 */
 			reg = < 0x0 >;                       /* in zephyr/dts/arm/st/h7/stm32h7.dtsi:122 */
-			status = "disabled";                 /* in zephyr/dts/arm/st/h7/stm32h7.dtsi:123 */
+			div-m = < 0x2 >;                     /* in ../Projects/stm32_system_on_module/fw/som/boards/hagzey/som/som.dts:67 */
+			mul-n = < 0xf0 >;                    /* in ../Projects/stm32_system_on_module/fw/som/boards/hagzey/som/som.dts:68 */
+			div-p = < 0x2 >;                     /* in ../Projects/stm32_system_on_module/fw/som/boards/hagzey/som/som.dts:69 */
+			div-q = < 0x2 >;                     /* in ../Projects/stm32_system_on_module/fw/som/boards/hagzey/som/som.dts:70 */
+			div-r = < 0x2 >;                     /* in ../Projects/stm32_system_on_module/fw/som/boards/hagzey/som/som.dts:71 */
+			clocks = < &clk_hse >;               /* in ../Projects/stm32_system_on_module/fw/som/boards/hagzey/som/som.dts:72 */
+			status = "okay";                     /* in ../Projects/stm32_system_on_module/fw/som/boards/hagzey/som/som.dts:73 */
+			phandle = < 0x2 >;                   /* in ../Projects/stm32_system_on_module/fw/som/boards/hagzey/som/som.dts:77 */
 		};
 
 		/* node '/clocks/pll@1' defined in zephyr/dts/arm/st/h7/stm32h7.dtsi:126 */
@@ -1718,7 +1797,7 @@
 	otghs_fs_phy: otghs_fs_phy {
 		compatible = "usb-nop-xceiv"; /* in zephyr/dts/arm/st/h7/stm32h742.dtsi:95 */
 		#phy-cells = < 0x0 >;         /* in zephyr/dts/arm/st/h7/stm32h742.dtsi:96 */
-		phandle = < 0xa >;            /* in zephyr/dts/arm/st/h7/stm32h742.dtsi:42 */
+		phandle = < 0x10 >;           /* in zephyr/dts/arm/st/h7/stm32h742.dtsi:42 */
 	};
 
 	/* node '/memory@30040000' defined in zephyr/dts/arm/st/h7/stm32h743.dtsi:32 */

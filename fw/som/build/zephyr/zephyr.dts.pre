@@ -5054,6 +5054,39 @@
 };
 
 
+&pinctrl {
+    quadspi_clk_pf10: quadspi_clk_pf10 {
+        pinmux = <((((('F') - 'A') & 0x1FU) << 9U) | (((10) & 0xFU) << 5U) | (((0x9) & 0x1FU) << 0U))>;
+        slew-rate = "very-high-speed";
+    };
+
+    quadspi_bk1_ncs_pb10: quadspi_bk1_ncs_pb10 {
+        pinmux = <((((('B') - 'A') & 0x1FU) << 9U) | (((10) & 0xFU) << 5U) | (((0x9) & 0x1FU) << 0U))>;
+        slew-rate = "very-high-speed";
+    };
+
+    quadspi_bk1_io0_pf8: quadspi_bk1_io0_pf8 {
+        pinmux = <((((('F') - 'A') & 0x1FU) << 9U) | (((8) & 0xFU) << 5U) | (((0xa) & 0x1FU) << 0U))>;
+        slew-rate = "very-high-speed";
+    };
+
+    quadspi_bk1_io1_pf9: quadspi_bk1_io1_pf9 {
+        pinmux = <((((('F') - 'A') & 0x1FU) << 9U) | (((9) & 0xFU) << 5U) | (((0xa) & 0x1FU) << 0U))>;
+        slew-rate = "very-high-speed";
+    };
+
+    quadspi_bk1_io2_pe2: quadspi_bk1_io2_pe2 {
+        pinmux = <((((('E') - 'A') & 0x1FU) << 9U) | (((2) & 0xFU) << 5U) | (((0x9) & 0x1FU) << 0U))>;
+        slew-rate = "very-high-speed";
+    };
+
+    quadspi_bk1_io3_pf6: quadspi_bk1_io3_pf6 {
+        pinmux = <((((('F') - 'A') & 0x1FU) << 9U) | (((6) & 0xFU) << 5U) | (((0x9) & 0x1FU) << 0U))>;
+        slew-rate = "very-high-speed";
+    };
+};
+
+
 &usart1 {
     pinctrl-0 = <&usart1_tx_pb14 &usart1_rx_pb15>;
     pinctrl-names = "default";
@@ -5062,22 +5095,67 @@
 };
 
 
+&clk_hse {
+    hse-bypass;
+    clock-frequency = <(((8) * 1000) * 1000)>;
+    status = "okay";
+};
+
+&pll {
+    div-m = <2>;
+    mul-n = <240>;
+    div-p = <2>;
+    div-q = <2>;
+    div-r = <2>;
+    clocks = <&clk_hse>;
+    status = "okay";
+};
+
 &rcc {
- clocks = <&clk_hsi>;
- clock-frequency = <(((64) * 1000) * 1000)>;
-
+    clocks = <&pll>;
+    clock-frequency = <(((480) * 1000) * 1000)>;
     d1cpre = <1>;
-    hpre = <1>;
-
-    d1ppre = <1>;
-    d2ppre1 = <1>;
-    d2ppre2 = <1>;
-    d3ppre = <1>;
+    hpre = <2>;
+    d1ppre = <2>;
+    d2ppre1 = <2>;
+    d2ppre2 = <2>;
+    d3ppre = <2>;
 };
 
 
 &pwr {
     power-supply = "ldo";
+};
+
+
+&quadspi {
+    pinctrl-names = "default";
+    pinctrl-0 = <&quadspi_clk_pf10 &quadspi_bk1_ncs_pb10
+                 &quadspi_bk1_io0_pf8 &quadspi_bk1_io1_pf9
+                 &quadspi_bk1_io2_pe2 &quadspi_bk1_io3_pf6>;
+    flash-id = <1>;
+    status = "okay";
+
+    at25ff161a: qspi-nor-flash@0 {
+        compatible = "st,stm32-qspi-nor";
+        reg = <0>;
+        size = <(((2) * 1024) * 1024)>;
+        qspi-max-frequency = <40000000>;
+        cs-high-time = <2>;
+        spi-bus-width = <4>;
+        writeoc = "PP_1_1_4";
+        status = "okay";
+
+        partitions {
+            compatible = "fixed-partitions";
+            #address-cells = <1>;
+            #size-cells = <1>;
+
+            slot0_partition: partition@0 {
+                reg = <0x00000000 (((2) * 1024) * 1024)>;
+            };
+        };
+    };
 };
 # 0 "<command-line>" 2
 # 1 "/home/adamhage/zephyrproject/zephyr/misc/empty_file.c"

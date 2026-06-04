@@ -169,6 +169,126 @@
     ],
     [
         [
+            "int flash_read",
+            "const struct device *dev, off_t offset, void *data, size_t len"
+        ],
+        "flash.h",
+        true
+    ],
+    [
+        [
+            "int flash_write",
+            "const struct device *dev, off_t offset, const void *data, size_t len"
+        ],
+        "flash.h",
+        true
+    ],
+    [
+        [
+            "int flash_erase",
+            "const struct device *dev, off_t offset, size_t size"
+        ],
+        "flash.h",
+        true
+    ],
+    [
+        [
+            "int flash_get_size",
+            "const struct device *dev, uint64_t *size"
+        ],
+        "flash.h",
+        true
+    ],
+    [
+        [
+            "int flash_fill",
+            "const struct device *dev, uint8_t val, off_t offset, size_t size"
+        ],
+        "flash.h",
+        true
+    ],
+    [
+        [
+            "int flash_flatten",
+            "const struct device *dev, off_t offset, size_t size"
+        ],
+        "flash.h",
+        true
+    ],
+    [
+        [
+            "int flash_get_page_info_by_offs",
+            "const struct device *dev, off_t offset, struct flash_pages_info *info"
+        ],
+        "flash.h",
+        true
+    ],
+    [
+        [
+            "int flash_get_page_info_by_idx",
+            "const struct device *dev, uint32_t page_index, struct flash_pages_info *info"
+        ],
+        "flash.h",
+        true
+    ],
+    [
+        [
+            "size_t flash_get_page_count",
+            "const struct device *dev"
+        ],
+        "flash.h",
+        true
+    ],
+    [
+        [
+            "int flash_sfdp_read",
+            "const struct device *dev, off_t offset, void *data, size_t len"
+        ],
+        "flash.h",
+        true
+    ],
+    [
+        [
+            "int flash_read_jedec_id",
+            "const struct device *dev, uint8_t *id"
+        ],
+        "flash.h",
+        true
+    ],
+    [
+        [
+            "size_t flash_get_write_block_size",
+            "const struct device *dev"
+        ],
+        "flash.h",
+        true
+    ],
+    [
+        [
+            "const struct flash_parameters *flash_get_parameters",
+            "const struct device *dev"
+        ],
+        "flash.h",
+        true
+    ],
+    [
+        [
+            "int flash_ex_op",
+            "const struct device *dev, uint16_t code, const uintptr_t in, void *out"
+        ],
+        "flash.h",
+        true
+    ],
+    [
+        [
+            "int flash_copy",
+            "const struct device *src_dev, off_t src_offset, const struct device *dst_dev, off_t dst_offset, off_t size, uint8_t *buf, size_t buf_size"
+        ],
+        "flash.h",
+        true
+    ],
+    [
+        [
             "int gpio_pin_interrupt_configure",
             "const struct device *port, gpio_pin_t pin, gpio_flags_t flags"
         ],
@@ -2597,126 +2717,6 @@
             "const struct device *dev, struct espi_saf_packet *pckt"
         ],
         "espi_saf.h",
-        false
-    ],
-    [
-        [
-            "int flash_read",
-            "const struct device *dev, off_t offset, void *data, size_t len"
-        ],
-        "flash.h",
-        false
-    ],
-    [
-        [
-            "int flash_write",
-            "const struct device *dev, off_t offset, const void *data, size_t len"
-        ],
-        "flash.h",
-        false
-    ],
-    [
-        [
-            "int flash_erase",
-            "const struct device *dev, off_t offset, size_t size"
-        ],
-        "flash.h",
-        false
-    ],
-    [
-        [
-            "int flash_get_size",
-            "const struct device *dev, uint64_t *size"
-        ],
-        "flash.h",
-        false
-    ],
-    [
-        [
-            "int flash_fill",
-            "const struct device *dev, uint8_t val, off_t offset, size_t size"
-        ],
-        "flash.h",
-        false
-    ],
-    [
-        [
-            "int flash_flatten",
-            "const struct device *dev, off_t offset, size_t size"
-        ],
-        "flash.h",
-        false
-    ],
-    [
-        [
-            "int flash_get_page_info_by_offs",
-            "const struct device *dev, off_t offset, struct flash_pages_info *info"
-        ],
-        "flash.h",
-        false
-    ],
-    [
-        [
-            "int flash_get_page_info_by_idx",
-            "const struct device *dev, uint32_t page_index, struct flash_pages_info *info"
-        ],
-        "flash.h",
-        false
-    ],
-    [
-        [
-            "size_t flash_get_page_count",
-            "const struct device *dev"
-        ],
-        "flash.h",
-        false
-    ],
-    [
-        [
-            "int flash_sfdp_read",
-            "const struct device *dev, off_t offset, void *data, size_t len"
-        ],
-        "flash.h",
-        false
-    ],
-    [
-        [
-            "int flash_read_jedec_id",
-            "const struct device *dev, uint8_t *id"
-        ],
-        "flash.h",
-        false
-    ],
-    [
-        [
-            "size_t flash_get_write_block_size",
-            "const struct device *dev"
-        ],
-        "flash.h",
-        false
-    ],
-    [
-        [
-            "const struct flash_parameters *flash_get_parameters",
-            "const struct device *dev"
-        ],
-        "flash.h",
-        false
-    ],
-    [
-        [
-            "int flash_ex_op",
-            "const struct device *dev, uint16_t code, const uintptr_t in, void *out"
-        ],
-        "flash.h",
-        false
-    ],
-    [
-        [
-            "int flash_copy",
-            "const struct device *src_dev, off_t src_offset, const struct device *dst_dev, off_t dst_offset, off_t size, uint8_t *buf, size_t buf_size"
-        ],
-        "flash.h",
         false
     ],
     [

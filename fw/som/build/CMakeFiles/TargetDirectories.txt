@@ -143,6 +143,8 @@
 /home/adamhage/Projects/stm32_system_on_module/fw/som/build/zephyr/subsys/stats/CMakeFiles/rebuild_cache.dir
 /home/adamhage/Projects/stm32_system_on_module/fw/som/build/zephyr/subsys/storage/CMakeFiles/edit_cache.dir
 /home/adamhage/Projects/stm32_system_on_module/fw/som/build/zephyr/subsys/storage/CMakeFiles/rebuild_cache.dir
+/home/adamhage/Projects/stm32_system_on_module/fw/som/build/zephyr/subsys/storage/flash_map/CMakeFiles/edit_cache.dir
+/home/adamhage/Projects/stm32_system_on_module/fw/som/build/zephyr/subsys/storage/flash_map/CMakeFiles/rebuild_cache.dir
 /home/adamhage/Projects/stm32_system_on_module/fw/som/build/zephyr/subsys/testsuite/CMakeFiles/edit_cache.dir
 /home/adamhage/Projects/stm32_system_on_module/fw/som/build/zephyr/subsys/testsuite/CMakeFiles/rebuild_cache.dir
 /home/adamhage/Projects/stm32_system_on_module/fw/som/build/zephyr/subsys/tracing/CMakeFiles/edit_cache.dir
@@ -190,6 +192,9 @@
 /home/adamhage/Projects/stm32_system_on_module/fw/som/build/zephyr/drivers/clock_control/CMakeFiles/drivers__clock_control.dir
 /home/adamhage/Projects/stm32_system_on_module/fw/som/build/zephyr/drivers/clock_control/CMakeFiles/edit_cache.dir
 /home/adamhage/Projects/stm32_system_on_module/fw/som/build/zephyr/drivers/clock_control/CMakeFiles/rebuild_cache.dir
+/home/adamhage/Projects/stm32_system_on_module/fw/som/build/zephyr/drivers/flash/CMakeFiles/drivers__flash.dir
+/home/adamhage/Projects/stm32_system_on_module/fw/som/build/zephyr/drivers/flash/CMakeFiles/edit_cache.dir
+/home/adamhage/Projects/stm32_system_on_module/fw/som/build/zephyr/drivers/flash/CMakeFiles/rebuild_cache.dir
 /home/adamhage/Projects/stm32_system_on_module/fw/som/build/zephyr/drivers/gpio/CMakeFiles/drivers__gpio.dir
 /home/adamhage/Projects/stm32_system_on_module/fw/som/build/zephyr/drivers/gpio/CMakeFiles/edit_cache.dir
 /home/adamhage/Projects/stm32_system_on_module/fw/som/build/zephyr/drivers/gpio/CMakeFiles/rebuild_cache.dir

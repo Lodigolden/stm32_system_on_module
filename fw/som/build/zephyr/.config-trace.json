@@ -77,6 +77,17 @@
     ]
   ],
   [
+    "CONFIG_DT_HAS_FIXED_PARTITIONS_ENABLED",
+    "n",
+    "bool",
+    "y",
+    "default",
+    [
+      "/home/adamhage/Projects/stm32_system_on_module/fw/som/build/Kconfig/Kconfig.dts",
+      2993
+    ]
+  ],
+  [
     "CONFIG_DT_HAS_MMIO_SRAM_ENABLED",
     "n",
     "bool",
@@ -143,6 +154,17 @@
     ]
   ],
   [
+    "CONFIG_DT_HAS_ST_STM32_HSE_CLOCK_ENABLED",
+    "n",
+    "bool",
+    "y",
+    "default",
+    [
+      "/home/adamhage/Projects/stm32_system_on_module/fw/som/build/Kconfig/Kconfig.dts",
+      13118
+    ]
+  ],
+  [
     "CONFIG_DT_HAS_ST_STM32_NV_FLASH_ENABLED",
     "n",
     "bool",
@@ -173,6 +195,28 @@
     [
       "/home/adamhage/Projects/stm32_system_on_module/fw/som/build/Kconfig/Kconfig.dts",
       13258
+    ]
+  ],
+  [
+    "CONFIG_DT_HAS_ST_STM32_QSPI_ENABLED",
+    "n",
+    "bool",
+    "y",
+    "default",
+    [
+      "/home/adamhage/Projects/stm32_system_on_module/fw/som/build/Kconfig/Kconfig.dts",
+      13278
+    ]
+  ],
+  [
+    "CONFIG_DT_HAS_ST_STM32_QSPI_NOR_ENABLED",
+    "n",
+    "bool",
+    "y",
+    "default",
+    [
+      "/home/adamhage/Projects/stm32_system_on_module/fw/som/build/Kconfig/Kconfig.dts",
+      13288
     ]
   ],
   [
@@ -217,6 +261,17 @@
     [
       "/home/adamhage/Projects/stm32_system_on_module/fw/som/build/Kconfig/Kconfig.dts",
       13648
+    ]
+  ],
+  [
+    "CONFIG_DT_HAS_ST_STM32H7_PLL_CLOCK_ENABLED",
+    "n",
+    "bool",
+    "y",
+    "default",
+    [
+      "/home/adamhage/Projects/stm32_system_on_module/fw/som/build/Kconfig/Kconfig.dts",
+      13668
     ]
   ],
   [
@@ -414,7 +469,7 @@
     "CONFIG_NUM_IRQS",
     "n",
     "int",
-    "41",
+    "93",
     "default",
     [
       "/home/adamhage/zephyrproject/zephyr/soc/st/stm32/Kconfig.defconfig",
@@ -425,7 +480,7 @@
     "CONFIG_SYS_CLOCK_HW_CYCLES_PER_SEC",
     "y",
     "int",
-    "64000000",
+    "480000000",
     "default",
     [
       "/home/adamhage/zephyrproject/zephyr/soc/st/stm32/Kconfig.defconfig",
@@ -917,12 +972,26 @@
     null
   ],
   [
+    "CONFIG_FLASH_FILL_BUFFER_SIZE",
+    "y",
+    "int",
+    "32",
+    "default",
+    [
+      "/home/adamhage/zephyrproject/zephyr/drivers/flash/Kconfig",
+      129
+    ]
+  ],
+  [
     "CONFIG_FLASH",
     "y",
     "bool",
-    null,
-    "unset",
-    null
+    "y",
+    "assign",
+    [
+      "/home/adamhage/Projects/stm32_system_on_module/fw/som/prj.conf",
+      9
+    ]
   ],
   [
     "CONFIG_CODE_DATA_RELOCATION",
@@ -1125,6 +1194,17 @@
     null,
     "unset",
     null
+  ],
+  [
+    "CONFIG_FLASH_INIT_PRIORITY",
+    "y",
+    "int",
+    "50",
+    "default",
+    [
+      "/home/adamhage/zephyrproject/zephyr/drivers/flash/Kconfig",
+      161
+    ]
   ],
   [
     "CONFIG_GEN_IRQ_START_VECTOR",
@@ -2429,6 +2509,26 @@
     ]
   ],
   [
+    "CONFIG_USE_STM32_HAL_MDMA",
+    "n",
+    "bool",
+    "y",
+    "select",
+    [
+      "FLASH_STM32_QSPI && SOC_SERIES_STM32H7X && DT_HAS_ST_STM32_QSPI_NOR_ENABLED && FLASH"
+    ]
+  ],
+  [
+    "CONFIG_USE_STM32_HAL_QSPI",
+    "n",
+    "bool",
+    "y",
+    "select",
+    [
+      "FLASH_STM32_QSPI && DT_HAS_ST_STM32_QSPI_NOR_ENABLED && FLASH"
+    ]
+  ],
+  [
     "CONFIG_USE_STM32_LL_RCC",
     "n",
     "bool",
@@ -2712,6 +2812,14 @@
       "/home/adamhage/zephyrproject/zephyr/arch/arm/core/mpu/Kconfig",
       15
     ]
+  ],
+  [
+    "CONFIG_MPU_ALLOW_FLASH_WRITE",
+    "y",
+    "bool",
+    null,
+    "unset",
+    null
   ],
   [
     "CONFIG_CPU_CORTEX_M",
@@ -4183,6 +4291,17 @@
     ]
   ],
   [
+    "CONFIG_CLOCK_STM32_HSE_CLOCK",
+    "n",
+    "int",
+    "8000000",
+    "default",
+    [
+      "/home/adamhage/zephyrproject/zephyr/drivers/clock_control/Kconfig.stm32",
+      27
+    ]
+  ],
+  [
     "CONFIG_CLOCK_CONTROL_TISCI_PRIORITY",
     "y",
     "int",
@@ -4323,6 +4442,184 @@
   ],
   [
     "CONFIG_ARM_SCMI",
+    "y",
+    "bool",
+    null,
+    "unset",
+    null
+  ],
+  [
+    "CONFIG_FLASH_HAS_DRIVER_ENABLED",
+    "n",
+    "bool",
+    "y",
+    "select",
+    [
+      "SOC_FLASH_STM32 && DT_HAS_ST_STM32_FLASH_CONTROLLER_ENABLED && FLASH",
+      "FLASH_STM32_QSPI && DT_HAS_ST_STM32_QSPI_NOR_ENABLED && FLASH"
+    ]
+  ],
+  [
+    "CONFIG_FLASH_HAS_EXPLICIT_ERASE",
+    "n",
+    "bool",
+    "y",
+    "select",
+    [
+      "SOC_FLASH_STM32 && DT_HAS_ST_STM32_FLASH_CONTROLLER_ENABLED && FLASH",
+      "FLASH_STM32_QSPI && DT_HAS_ST_STM32_QSPI_NOR_ENABLED && FLASH"
+    ]
+  ],
+  [
+    "CONFIG_FLASH_HAS_PAGE_LAYOUT",
+    "n",
+    "bool",
+    "y",
+    "select",
+    [
+      "SOC_FLASH_STM32 && DT_HAS_ST_STM32_FLASH_CONTROLLER_ENABLED && FLASH",
+      "FLASH_STM32_QSPI && DT_HAS_ST_STM32_QSPI_NOR_ENABLED && FLASH"
+    ]
+  ],
+  [
+    "CONFIG_FLASH_JESD216",
+    "n",
+    "bool",
+    "y",
+    "select",
+    [
+      "FLASH_STM32_QSPI && DT_HAS_ST_STM32_QSPI_NOR_ENABLED && FLASH"
+    ]
+  ],
+  [
+    "CONFIG_FLASH_JESD216_API",
+    "y",
+    "bool",
+    null,
+    "unset",
+    null
+  ],
+  [
+    "CONFIG_FLASH_SHELL",
+    "y",
+    "bool",
+    "y",
+    "assign",
+    [
+      "/home/adamhage/Projects/stm32_system_on_module/fw/som/prj.conf",
+      12
+    ]
+  ],
+  [
+    "CONFIG_FLASH_SHELL_TEST_COMMANDS",
+    "y",
+    "bool",
+    null,
+    "unset",
+    null
+  ],
+  [
+    "CONFIG_FLASH_SHELL_BUFFER_SIZE",
+    "y",
+    "hex",
+    "0x1000",
+    "default",
+    [
+      "/home/adamhage/zephyrproject/zephyr/drivers/flash/Kconfig",
+      119
+    ]
+  ],
+  [
+    "CONFIG_FLASH_PAGE_LAYOUT",
+    "y",
+    "bool",
+    "y",
+    "default",
+    [
+      "/home/adamhage/zephyrproject/zephyr/drivers/flash/Kconfig",
+      145
+    ]
+  ],
+  [
+    "CONFIG_STM32_MEMMAP",
+    "y",
+    "bool",
+    null,
+    "unset",
+    null
+  ],
+  [
+    "CONFIG_SOC_FLASH_STM32",
+    "y",
+    "bool",
+    "y",
+    "default",
+    [
+      "/home/adamhage/zephyrproject/zephyr/drivers/flash/Kconfig.stm32",
+      22
+    ]
+  ],
+  [
+    "CONFIG_FLASH_STM32_WRITE_PROTECT",
+    "y",
+    "bool",
+    null,
+    "unset",
+    null
+  ],
+  [
+    "CONFIG_FLASH_STM32_READOUT_PROTECTION",
+    "y",
+    "bool",
+    null,
+    "unset",
+    null
+  ],
+  [
+    "CONFIG_FLASH_STM32_BLOCK_REGISTERS",
+    "y",
+    "bool",
+    null,
+    "unset",
+    null
+  ],
+  [
+    "CONFIG_FLASH_STM32_OPTION_BYTES",
+    "y",
+    "bool",
+    null,
+    "unset",
+    null
+  ],
+  [
+    "CONFIG_USE_MICROCHIP_QSPI_FLASH_WITH_STM32",
+    "y",
+    "bool",
+    null,
+    "unset",
+    null
+  ],
+  [
+    "CONFIG_FLASH_STM32_QSPI",
+    "y",
+    "bool",
+    "y",
+    "default",
+    [
+      "/home/adamhage/zephyrproject/zephyr/drivers/flash/Kconfig.stm32_qspi",
+      11
+    ]
+  ],
+  [
+    "CONFIG_FLASH_STM32_QSPI_GENERIC_READ",
+    "y",
+    "bool",
+    null,
+    "unset",
+    null
+  ],
+  [
+    "CONFIG_FLASH_STM32_QSPI_GENERIC_WRITE",
     "y",
     "bool",
     null,
@@ -4616,6 +4913,7 @@
     "y",
     "select",
     [
+      "FLASH_STM32_QSPI && DT_HAS_ST_STM32_QSPI_NOR_ENABLED && FLASH",
       "UART_STM32 && DT_HAS_ST_STM32_UART_ENABLED && SERIAL"
     ]
   ],
@@ -5331,7 +5629,7 @@
     "assign",
     [
       "/home/adamhage/Projects/stm32_system_on_module/fw/som/prj.conf",
-      9
+      15
     ]
   ],
   [
@@ -5417,7 +5715,7 @@
     "assign",
     [
       "/home/adamhage/Projects/stm32_system_on_module/fw/som/prj.conf",
-      11
+      17
     ]
   ],
   [
@@ -6205,6 +6503,14 @@
     null
   ],
   [
+    "CONFIG_FCB",
+    "y",
+    "bool",
+    null,
+    "unset",
+    null
+  ],
+  [
     "CONFIG_GNSS_RTK",
     "y",
     "bool",
@@ -6257,6 +6563,14 @@
   ],
   [
     "CONFIG_JWT",
+    "y",
+    "bool",
+    null,
+    "unset",
+    null
+  ],
+  [
+    "CONFIG_NVS",
     "y",
     "bool",
     null,
@@ -7310,6 +7624,49 @@
   ],
   [
     "CONFIG_STATS",
+    "y",
+    "bool",
+    null,
+    "unset",
+    null
+  ],
+  [
+    "CONFIG_FLASH_MAP",
+    "y",
+    "bool",
+    "y",
+    "assign",
+    [
+      "/home/adamhage/Projects/stm32_system_on_module/fw/som/prj.conf",
+      10
+    ]
+  ],
+  [
+    "CONFIG_FLASH_MAP_SHELL",
+    "y",
+    "bool",
+    null,
+    "unset",
+    null
+  ],
+  [
+    "CONFIG_FLASH_MAP_CUSTOM",
+    "y",
+    "bool",
+    null,
+    "unset",
+    null
+  ],
+  [
+    "CONFIG_FLASH_AREA_CHECK_INTEGRITY",
+    "y",
+    "bool",
+    null,
+    "unset",
+    null
+  ],
+  [
+    "CONFIG_FLASH_MAP_LABELS",
     "y",
     "bool",
     null,
