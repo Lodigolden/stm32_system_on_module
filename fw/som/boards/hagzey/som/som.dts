@@ -1,6 +1,6 @@
 /dts-v1/;
 #include <st/h7/stm32h743Xi.dtsi>
-#include <st/h7/stm32h743vitx-pinctrl.dtsi>
+#include <st/h7/stm32h743zitx-pinctrl.dtsi>
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 #include <zephyr/dt-bindings/mipi_dbi/mipi_dbi.h>
 
@@ -46,14 +46,101 @@
         pinmux = <STM32_PINMUX('F', 6, AF9)>;
         slew-rate = "very-high-speed";
     };
-};
 
-/* UART1 : Console and programming */
-&usart1 {
-    pinctrl-0 = <&usart1_tx_pb14 &usart1_rx_pb15>;
-    pinctrl-names = "default";
-    current-speed = <57600>;
-    status = "okay";
+    fmc_sdclk_pg8: fmc_sdclk_pg8 {
+        pinmux = <STM32_PINMUX('G', 8, AF12)>;
+        slew-rate = "very-high-speed";
+    };
+
+    fmc_sdcke0_pc3: fmc_sdcke0_pc3 {
+        pinmux = <STM32_PINMUX('C', 3, AF12)>;
+        slew-rate = "very-high-speed";
+    };
+
+    fmc_sdne0_pc2: fmc_sdne0_pc2 {
+        pinmux = <STM32_PINMUX('C', 2, AF12)>;
+        slew-rate = "very-high-speed";
+    };
+
+    fmc_sdnras_pf11: fmc_sdnras_pf11 {
+        pinmux = <STM32_PINMUX('F', 11, AF12)>;
+        slew-rate = "very-high-speed";
+    };
+
+    fmc_sdncas_pg15: fmc_sdncas_pg15 {
+        pinmux = <STM32_PINMUX('G', 15, AF12)>;
+        slew-rate = "very-high-speed";
+    };
+
+    fmc_a0_pf0: fmc_a0_pf0 {
+        pinmux = <STM32_PINMUX('F', 0, AF12)>;
+        slew-rate = "very-high-speed";
+    };
+
+    fmc_a1_pf1: fmc_a1_pf1 {
+        pinmux = <STM32_PINMUX('F', 1, AF12)>;
+        slew-rate = "very-high-speed";
+    };
+
+    fmc_a2_pf2: fmc_a2_pf2 {
+        pinmux = <STM32_PINMUX('F', 2, AF12)>;
+        slew-rate = "very-high-speed";
+    };
+
+    fmc_a3_pf3: fmc_a3_pf3 {
+        pinmux = <STM32_PINMUX('F', 3, AF12)>;
+        slew-rate = "very-high-speed";
+    };
+
+    fmc_a4_pf4: fmc_a4_pf4 {
+        pinmux = <STM32_PINMUX('F', 4, AF12)>;
+        slew-rate = "very-high-speed";
+    };
+
+    fmc_a5_pf5: fmc_a5_pf5 {
+        pinmux = <STM32_PINMUX('F', 5, AF12)>;
+        slew-rate = "very-high-speed";
+    };
+
+    fmc_a6_pf12: fmc_a6_pf12 {
+        pinmux = <STM32_PINMUX('F', 12, AF12)>;
+        slew-rate = "very-high-speed";
+    };
+
+    fmc_a7_pf13: fmc_a7_pf13 {
+        pinmux = <STM32_PINMUX('F', 13, AF12)>;
+        slew-rate = "very-high-speed";
+    };
+
+    fmc_a8_pf14: fmc_a8_pf14 {
+        pinmux = <STM32_PINMUX('F', 14, AF12)>;
+        slew-rate = "very-high-speed";
+    };
+
+    fmc_a9_pf15: fmc_a9_pf15 {
+        pinmux = <STM32_PINMUX('F', 15, AF12)>;
+        slew-rate = "very-high-speed";
+    };
+
+    fmc_a10_pg0: fmc_a10_pg0 {
+        pinmux = <STM32_PINMUX('G', 0, AF12)>;
+        slew-rate = "very-high-speed";
+    };
+
+    fmc_a11_pg1: fmc_a11_pg1 {
+        pinmux = <STM32_PINMUX('G', 1, AF12)>;
+        slew-rate = "very-high-speed";
+    };
+
+    fmc_a14_pg4: fmc_a14_pg4 {
+        pinmux = <STM32_PINMUX('G', 4, AF12)>;
+        slew-rate = "very-high-speed";
+    };
+
+    fmc_a15_pg5: fmc_a15_pg5 {
+        pinmux = <STM32_PINMUX('G', 5, AF12)>;
+        slew-rate = "very-high-speed";
+    };
 };
 
 /* Clocks */
@@ -89,6 +176,14 @@
     power-supply = "ldo";
 };
 
+/* UART1 : Console and programming */
+&usart1 {
+    pinctrl-0 = <&usart1_tx_pb14 &usart1_rx_pb15>;
+    pinctrl-names = "default";
+    current-speed = <57600>;
+    status = "okay";
+};
+
 /* QSPI NOR Flash */
 &quadspi {
     pinctrl-names = "default";
@@ -116,6 +211,44 @@
             slot0_partition: partition@0 {
                 reg = <0x00000000 DT_SIZE_M(2)>;
             };
+        };
+    };
+};
+
+/* SDRAM */
+&fmc {
+    pinctrl-0 = <&fmc_nbl0_pe0 &fmc_nbl1_pe1
+                 &fmc_sdclk_pg8 &fmc_sdnwe_pc0 &fmc_sdcke0_pc3
+                 &fmc_sdne0_pc2 &fmc_sdnras_pf11 &fmc_sdncas_pg15
+                 &fmc_a0_pf0 &fmc_a1_pf1 &fmc_a2_pf2 &fmc_a3_pf3 &fmc_a4_pf4
+                 &fmc_a5_pf5 &fmc_a6_pf12 &fmc_a7_pf13 &fmc_a8_pf14
+                 &fmc_a9_pf15 &fmc_a10_pg0 &fmc_a11_pg1
+                 &fmc_a14_pg4 &fmc_a15_pg5
+                 &fmc_d0_pd14 &fmc_d1_pd15 &fmc_d2_pd0 &fmc_d3_pd1
+                 &fmc_d4_pe7 &fmc_d5_pe8 &fmc_d6_pe9 &fmc_d7_pe10
+                 &fmc_d8_pe11 &fmc_d9_pe12 &fmc_d10_pe13 &fmc_d11_pe14
+                 &fmc_d12_pe15 &fmc_d13_pd8 &fmc_d14_pd9 &fmc_d15_pd10>;
+    pinctrl-names = "default";
+    status = "okay";
+
+    as4c8m16sa: sdram {
+        status = "okay";
+        power-up-delay = <100>;
+        num-auto-refresh = <8>;
+        mode-register = <0x230>;
+        refresh-rate = <0x606>;
+
+        bank@0 {
+            reg = <0>;
+            st,sdram-control = <STM32_FMC_SDRAM_NC_9
+                                STM32_FMC_SDRAM_NR_12
+                                STM32_FMC_SDRAM_MWID_16
+                                STM32_FMC_SDRAM_NB_4
+                                STM32_FMC_SDRAM_CAS_3
+                                STM32_FMC_SDRAM_SDCLK_PERIOD_2
+                                STM32_FMC_SDRAM_RBURST_ENABLE
+                                STM32_FMC_SDRAM_RPIPE_1>;
+            st,sdram-timing = <2 7 5 7 3 3 3>;
         };
     };
 };
