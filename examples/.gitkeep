@@ -1,0 +1,2 @@
+# TODO: Create a simple test board w/ differnet peripherals (LEDs, I2C devices, etc.) to showcase
+#       the system-on-module functionality.

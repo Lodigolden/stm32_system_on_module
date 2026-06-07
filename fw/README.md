@@ -1,4 +1,8 @@
 # Overview
+> NOTE: This file assums the user has Zephyr installed in a location easily accessible from any terminal. 
+
+> TODO: All commands here are for a Linux system. Update w/ Windows commands.
+
 ## Developing
 Use the following commands to start developing when using linux:
 > source ~/zephyrproject/.venv/bin/activate
